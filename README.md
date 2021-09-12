@@ -1,2 +1,3 @@
 # Expense-Report
-Created with CodeSandbox
+
+React Application for Expense Reports
