@@ -94,7 +94,7 @@ const expenseForm = (
         </div>
       </div>
       <div className='new-expense__actions'>
-      <button onClick={() => setisExpenseClicked(!isExpenseClicked)}>Cancel</button>
+      <button type="button" onClick={() => setisExpenseClicked(!isExpenseClicked)}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
