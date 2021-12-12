@@ -30,7 +30,7 @@ const App = () => {
 
 
   const addExpenseHandler = expense => {
-   setExpenses(prevState => [expense, ...expenses])
+   setExpenses(prevState => [expense, ...prevState])
   };
 
   // return React.createElement(
