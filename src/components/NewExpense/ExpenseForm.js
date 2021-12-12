@@ -6,6 +6,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
+  const [isExpenseClicked, setisExpenseClicked] = useState(false)
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
   //   enteredAmount: '',
@@ -53,9 +54,15 @@ const ExpenseForm = (props) => {
     setEnteredAmount('');
     setEnteredDate('');
   };
+const handleExpenseClick = () => setisExpenseClicked(!isExpenseClicked)
 
-  return (
-    <form onSubmit={submitHandler}>
+
+  const addExpenseButton = (<div className='new-expense__actions'>
+  <button onClick={handleExpenseClick}>Add Expense</button>
+</div>)
+
+const expenseForm = (
+<form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
@@ -87,9 +94,17 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
+      <button onClick={() => setisExpenseClicked(!isExpenseClicked)}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
+)
+
+  return (
+    <>
+    {!isExpenseClicked ? addExpenseButton : expenseForm}
+    </>
+    
   );
 };
 
